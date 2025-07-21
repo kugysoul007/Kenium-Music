@@ -54,7 +54,8 @@ const client = new Client({
 });
 
 // Inisialisasi Aqua (Lavalink client)
-const aqua = Aqua(client, CONFIG.nodes, {
+// Aqua adalah class, jadi harus digunakan dengan 'new'
+const aqua = new Aqua(client, CONFIG.nodes, {
     defaultSearchPlatform: "ytsearch",
     restVersion: "v4",
     autoResume: true,
