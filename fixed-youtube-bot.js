@@ -1,10 +1,12 @@
 /**
- * YouTube Music Bot - Standalone Version
+ * YouTube Music Bot - Fixed Version
+ * 
+ * Versi ini memperbaiki error "Class constructor Aqua cannot be invoked without 'new'"
  * 
  * Cara menggunakan:
  * 1. Pastikan Lavalink server sudah berjalan
  * 2. Edit konfigurasi di bawah (nodes dan token)
- * 3. Jalankan dengan: node youtube-bot.js
+ * 3. Jalankan dengan: node fixed-youtube-bot.js
  * 4. Gunakan command !play [query] di Discord
  */
 
@@ -54,7 +56,7 @@ const client = new Client({
 });
 
 // Inisialisasi Aqua (Lavalink client)
-// Aqua adalah class, jadi harus digunakan dengan 'new'
+// PENTING: Aqua adalah class, jadi harus digunakan dengan 'new'
 const aqua = new Aqua(client, CONFIG.nodes, {
     defaultSearchPlatform: "ytsearch",
     restVersion: "v4",
