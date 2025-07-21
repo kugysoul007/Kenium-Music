@@ -1,0 +1,51 @@
+server:
+  port: 2333
+  address: 0.0.0.0 # Penting: Pastikan ini ada agar Lavalink bisa diakses
+
+lavalink:
+  server:
+    password: "youshallnotpass"
+    sources:
+      youtube: true
+      soundcloud: true
+      bandcamp: true
+      twitch: true
+      vimeo: true
+      http: true
+      local: false
+    youtubeSearchEnabled: true # PENTING: Tambahkan ini untuk mengaktifkan pencarian YouTube
+    soundcloudSearchEnabled: true
+    youtube:
+      playlistLoadLimit: 6
+      hotfix: true # Aktifkan hotfix untuk mengatasi masalah YouTube
+    resuming:
+      enabled: true # Aktifkan untuk memungkinkan sesi dilanjutkan
+      timeout: 60
+    # Pengaturan buffering untuk stabilitas dan performa
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    opusEncodingTimeoutMs: 60000
+    # Tambahkan konfigurasi HTTP untuk mengatasi masalah koneksi
+    httpConfig:
+      connectTimeout: 10000
+      readTimeout: 10000
+      userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+
+# TAMBAHKAN PLUGIN LAVASRC
+plugins:
+  lavasrc:
+    sources:
+      youtube: true
+      spotify: false
+      applemusic: false
+    youtube:
+      defaultSearchProvider: ytsearch
+
+logging:
+  file:
+    max-size: 1GB # Batasi ukuran file log
+    max-history: 30
+  path: ./logs/ # Lokasi penyimpanan file log
+  level:
+    root: INFO # Level log default
+    lavalink: DEBUG # Ubah ke DEBUG untuk melihat log lebih detail
